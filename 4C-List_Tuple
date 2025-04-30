@@ -1,0 +1,26 @@
+# Creating a list
+fruits = ["apple", "banana", "cherry"]
+
+# Adding an item to the list
+fruits.append("mango")
+
+# Changing an item
+fruits[1] = "orange"
+
+# Printing all items
+print("List of fruits:")
+for fruit in fruits:
+    print(fruit)
+
+
+
+# Creating a tuple
+colors = ("red", "green", "blue")
+
+# Accessing items in a tuple
+print("Tuple of colors:")
+for color in colors:
+    print(color)
+
+# Tuples are immutable – this line would give an error:
+# colors[0] = "yellow"

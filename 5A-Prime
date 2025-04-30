@@ -1,0 +1,12 @@
+limit = 2000000
+prime = [True] * limit
+prime[0] = prime[1] = False  # 0 and 1 are not prime
+
+for i in range(2, int(limit ** 0.5) + 1):
+    if prime[i]:
+        for j in range(i*i, limit, i):
+            prime[j] = False
+
+# Calculate the sum of all primes
+sum_of_primes = sum(i for i, is_prime in enumerate(prime) if is_prime)
+print("Sum of all prime numbers below 2 million is:", sum_of_primes)

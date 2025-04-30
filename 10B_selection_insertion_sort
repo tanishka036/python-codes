@@ -1,0 +1,50 @@
+# Function to implement selection sort
+def selection_sort(arr):
+    n = len(arr)
+    
+    # Traverse through all elements in the array
+    for i in range(n):
+        # Find the minimum element in the remaining unsorted part
+        min_index = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        
+        # Swap the found minimum element with the first element
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+        
+    return arr
+
+# Example usage
+arr = list(map(int, input("Enter a list of numbers separated by space: ").split()))
+sorted_arr = selection_sort(arr)
+print(f"Sorted array: {sorted_arr}")
+
+
+
+
+
+# Function to implement insertion sort
+def insertion_sort(arr):
+    n = len(arr)
+    
+    # Traverse through 1 to n
+    for i in range(1, n):
+        key = arr[i]
+        j = i - 1
+        
+        # Move elements of arr[0..i-1] that are greater than key
+        # to one position ahead of their current position
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        
+        # Insert the key at the correct position
+        arr[j + 1] = key
+    
+    return arr
+
+# Example usage
+arr = list(map(int, input("Enter a list of numbers separated by space: ").split()))
+sorted_arr = insertion_sort(arr)
+print(f"Sorted array: {sorted_arr}")

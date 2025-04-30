@@ -1,0 +1,25 @@
+# List example
+numbers = [10, 20, 30, 40]
+
+# Sum elements
+total = 0
+for num in numbers:
+    total += num
+
+print("Sum of list elements:", total)
+
+
+# Dictionary example
+student = {"name": "Harsh", "age": 20, "branch": "CSE"}
+
+# Loop through keys and values
+for key, value in student.items():
+    print(key, ":", value)
+
+
+# String example
+text = "Hello"
+
+# Loop through characters
+for char in text:
+    print(char)

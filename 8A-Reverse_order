@@ -1,0 +1,17 @@
+# Function to print each line of a file in reverse order
+def print_lines_in_reverse(file_name):
+    try:
+        # Open the file in read mode
+        with open(file_name, 'r') as file:
+            # Read all lines of the file
+            lines = file.readlines()
+            
+            # Loop through the lines in reverse order and print each one
+            for line in reversed(lines):
+                print(line.strip())  # `strip()` removes any extra newline characters
+    except FileNotFoundError:
+        print(f"The file '{file_name}' was not found.")
+
+# Example usage
+file_name = input("Enter the file name: ")
+print_lines_in_reverse(file_name)

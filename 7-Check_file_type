@@ -1,0 +1,39 @@
+from collections import Counter
+
+# Function to count character frequency in a file
+def count_char_frequency(file_name):
+    with open(file_name, 'r') as file:
+        text = file.read()
+
+    # Count frequency of each character
+    char_freq = Counter(text)
+
+    return char_freq
+
+# Function to identify the file type based on character frequency
+def identify_file_type(file_name):
+    char_freq = count_char_frequency(file_name)
+
+    # Read a sample of the file (first 1000 characters for heuristic analysis)
+    sample_text = open(file_name, 'r').read(1000)
+
+    # Check for Python-specific keywords
+    python_keywords = ['def', 'import', 'class', 'self', 'lambda']
+    python_score = sum(sample_text.count(keyword) for keyword in python_keywords)
+
+    # Check for C-specific keywords
+    c_keywords = ['#include', 'printf', 'int', 'void', 'return']
+    c_score = sum(sample_text.count(keyword) for keyword in c_keywords)
+
+    # Determine file type based on keyword occurrences
+    if python_score > c_score:
+        return "Python File"
+    elif c_score > python_score:
+        return "C File"
+    else:
+        return "Text File"
+
+# Example usage
+file_name = input("Enter the file name: ")
+file_type = identify_file_type(file_name)
+print(f"The file is likely a: {file_type}")

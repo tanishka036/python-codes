@@ -1,0 +1,11 @@
+# Initialize the first two Fibonacci numbers
+a, b = 1, 2
+sum_even_fibs = 0
+
+# Loop until Fibonacci numbers exceed 4 million
+while a <= 4000000:
+    if a % 2 == 0:  # Check if the Fibonacci number is even
+        sum_even_fibs += a
+    a, b = b, a + b  # Update Fibonacci numbers
+
+print("Sum of even Fibonacci numbers not exceeding 4 million:", sum_even_fibs)

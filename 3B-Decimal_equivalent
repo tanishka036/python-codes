@@ -1,0 +1,6 @@
+# Taking input for the range
+n = int(input("Enter the maximum denominator: "))
+
+# Loop to print decimal equivalents of 1/2 to 1/n
+for i in range(2, n + 1):
+    print(f"1/{i} = {1/i}")

@@ -1,0 +1,30 @@
+# Dictionary to store person's details (name and birthday)
+person_details = {}
+
+# Take input for name and birthday from the user
+name = input("Enter your name: ")
+birthday = input("Enter your birthday (DD-MM-YYYY): ")
+
+# Store name and birthday in the dictionary
+person_details['name'] = name
+person_details['birthday'] = birthday
+
+# Split the name into a list (splitting by spaces)
+name_parts = name.split()
+
+# Join the name parts back into a single string with a hyphen between names
+joined_name = "-".join(name_parts)
+
+# Split birthday into day, month, year
+day, month, year = birthday.split("-")
+
+# Output the results
+print("\nPerson's Details:")
+print(f"Original Name: {name}")
+print(f"Joined Name: {joined_name}")
+print(f"Original Birthday: {birthday}")
+print(f"Day: {day}, Month: {month}, Year: {year}")
+
+print("\nDetails from Dictionary:")
+print(f"Name: {person_details['name']}")
+print(f"Birthday: {person_details['birthday']}")
